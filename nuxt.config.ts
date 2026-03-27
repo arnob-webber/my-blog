@@ -4,8 +4,21 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/strapi'
+    '@nuxtjs/strapi' // Make sure you ran: npx nuxi@latest module add strapi
   ],
+
+  // ADD THIS BLOCK
+  strapi: {
+url: process.env.STRAPI_URL || 'https://worthy-flower-f53009a381.strapiapp.com',
+  prefix: '/api',
+  version: 'v4',
+    cookie: {
+      path: '/',
+      maxAge: 14 * 24 * 60 * 60,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: true
+    }
+  },
 
   css: [
     '~/assets/css/fonts.css'
