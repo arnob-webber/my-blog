@@ -9,9 +9,9 @@ export default defineNuxtConfig({
 
   // ADD THIS BLOCK
   strapi: {
-url: process.env.STRAPI_URL || 'https://worthy-flower-f53009a381.strapiapp.com',
-  prefix: '/api',
-  version: 'v4',
+    url: process.env.STRAPI_URL || 'https://worthy-flower-f53009a381.strapiapp.com',
+    prefix: '/api',
+    version: 'v4',
     cookie: {
       path: '/',
       maxAge: 14 * 24 * 60 * 60,
