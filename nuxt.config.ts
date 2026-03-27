@@ -17,6 +17,10 @@ export default defineNuxtConfig({
       maxAge: 14 * 24 * 60 * 60,
       secure: process.env.NODE_ENV === 'production',
       sameSite: true
+    },
+    // Adding the auth token here
+    auth: {
+      token: process.env.STRAPI_TOKEN
     }
   },
 
