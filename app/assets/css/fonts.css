@@ -1,0 +1,71 @@
+:root {
+  font-family: 'Iosevka Charon Mono', monospace;
+}
+
+body {
+  font-family: 'Iosevka Charon Mono', monospace;
+}
+
+@font-face {
+  font-family: 'Wonderia';
+  src: url('/fonts/fonts for header/Wonderia.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SohidOsmanHadi';
+  src: url('/fonts/fonts for header/bangla_header/Sohid Osman Hadi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FNShaymolBangla';
+  src: url('/fonts/fonts for header/bangla_header/Unicode/FN Shaymol Bangla Unicodee.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FNShyamolBanglaItalic';
+  src: url('/fonts/fonts for header/bangla_header/Unicode/FN-Shyamol-Bangla Unicode Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FNMahinNarailAM';
+  src: url('/fonts/fonts for para/FN Mahin Narail Type Ardha Matra/FN Mahin Narail Type AM Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FNMahinNarailAM';
+  src: url('/fonts/fonts for para/FN Mahin Narail Type Ardha Matra/FN Mahin Narail Type AM Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FNMahinNarailPM';
+  src: url('/fonts/fonts for para/FN Mahin Narail Type Purna Matra/FN Mahin Narail Type PM Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FNMahinNarailPM';
+  src: url('/fonts/fonts for para/FN Mahin Narail Type Purna Matra/FN Mahin Narail Type PM Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
