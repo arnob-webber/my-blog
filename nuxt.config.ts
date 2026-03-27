@@ -4,10 +4,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/strapi' // Make sure you ran: npx nuxi@latest module add strapi
+    '@nuxtjs/strapi'
   ],
 
-  // ADD THIS BLOCK
   strapi: {
     url: process.env.STRAPI_URL || 'https://worthy-flower-f53009a381.strapiapp.com',
     prefix: '/api',
@@ -17,10 +16,12 @@ export default defineNuxtConfig({
       maxAge: 14 * 24 * 60 * 60,
       secure: process.env.NODE_ENV === 'production',
       sameSite: true
-    },
-    // Adding the auth token here
-    auth: {
-      token: process.env.STRAPI_TOKEN
+    }
+  },
+
+  runtimeConfig: {
+    public: {
+      strapiToken: process.env.STRAPI_TOKEN
     }
   },
 
@@ -37,6 +38,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   content: {
   }
 })

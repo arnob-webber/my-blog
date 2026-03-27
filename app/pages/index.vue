@@ -1,13 +1,39 @@
-
 <script setup lang="ts">
+import { useStrapi } from '#imports'
 
-const { data: recentPosts } = await useAsyncData('recent-posts', () => {
-  return queryCollection('content')
-    .order('date', 'DESC')
-    .limit(4)
-    .all()
+// 1. Initialize Strapi helper
+const { find } = useStrapi()
+
+
+// 2. Fetch the 4 most recent articles from Strapi
+// We use useAsyncData to ensure it works perfectly on Vercel
+const { data: strapiResponse } = await useAsyncData<any>('recent-posts', () => 
+  find<any>('articles', { 
+    sort: 'publishedAt:desc', 
+    pagination: { start: 0, limit: 4 },
+    populate: '*' 
+  })
+)
+
+
+
+
+
+// 3. Map the data to match your existing template structure
+const recentPosts = computed(() => {
+  return strapiResponse.value?.data?.map((post: any) => ({
+    // Use your specific field names (Title, Slug, etc.)
+    path: `/blog/${post.attributes.Slug}`,
+    title: post.attributes.Title,
+    // Handle the image URL from Strapi
+    image: post.attributes.Image?.data?.attributes?.url || 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    date: new Date(post.attributes.publishedAt).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    })
+  })) || []
 })
-
 
 const ytVideos = [
   { id: '1', title: 'The Future of Web Design in 2026', thumbnail: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800' },
