@@ -1,75 +1,50 @@
-# Nuxt Minimal Starter
+# Arnob's Premium Blog 🚀
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern, high-performance blog built with **Nuxt 4**, **Tailwind CSS**, and **Nuxt Content v3**.
 
-## Setup
+## ✨ Features
 
-Make sure to install dependencies:
+- **Nuxt 4 Architecture**: Leveraging the latest speed and stability improvements.
+- **Iosevka Charon Mono Typography**: A custom, unique font for a distinct developer-centric aesthetic.
+- **Dynamic Content**: Managed via Nuxt Content with Zod schema validation.
+- **Premium Design**: Dark-mode primary layout with vivid candy-pink and gold-warm accents.
+- **Responsive & Interactive**: Full mobile support with a sleek navbar and reading progress bars.
+- **SEO Optimized**: Pre-configured meta tags and efficient head management.
+- **Security Verified**: Zero identified vulnerabilities in core dependencies.
 
-```bash
-# npm
-npm install
+## 🛠️ Tech Stack
 
-# pnpm
-pnpm install
+- **Framework**: [Nuxt 4](https://nuxt.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Content**: [Nuxt Content v3](https://content.nuxt.com/)
+- **Validation**: [Zod](https://zod.dev/)
+- **Database**: [Better-SQLite3](https://github.com/WiseLibs/better-sqlite3)
 
-# yarn
-yarn install
+## 🚀 Getting Started
 
-# bun
-bun install
-```
+1. **Clone and install**:
+   ```bash
+   npm install
+   ```
 
-## Development Server
+2. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
 
-Start the development server on `http://localhost:3000`:
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-```bash
-# npm
-npm run dev
+## 📂 Project Structure
 
-# pnpm
-pnpm dev
+- `app/`: The core Nuxt application (pages, components, assets).
+- `content/`: Markdown files for your blog entries.
+- `public/`: Static assets (fonts, images).
+- `content.config.ts`: Schema definitions for your content.
+- `tailwind.config.ts`: Custom theme settings.
 
-# yarn
-yarn dev
+---
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Crafted with ❤️ by **Arnob**.
