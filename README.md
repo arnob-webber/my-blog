@@ -17,6 +17,7 @@ A modern, high-performance blog built with **Nuxt 4**, **Tailwind CSS**, and **N
 - **Framework**: [Nuxt 4](https://nuxt.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Content**: [Nuxt Content v3](https://content.nuxt.com/)
+- **CMS Client**: [Strapi Nuxt Module](https://strapi.nuxtjs.org/)
 - **Validation**: [Zod](https://zod.dev/)
 - **Database**: [Better-SQLite3](https://github.com/WiseLibs/better-sqlite3)
 
