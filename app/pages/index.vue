@@ -1,37 +1,20 @@
 <script setup lang="ts">
-import { useStrapi } from '#imports'
-
-// 1. Initialize Strapi helper
-const { find } = useStrapi()
-
-
-// 2. Fetch the 4 most recent articles from Strapi
-// We use useAsyncData to ensure it works perfectly on Vercel
-const { data: strapiResponse } = await useAsyncData<any>('recent-posts', () => 
-  find<any>('articles', { 
-    sort: 'publishedAt:desc', 
-    pagination: { start: 0, limit: 4 },
-    populate: '*' 
-  })
+// 1. Fetch the 4 most recent articles from Nuxt Content
+const { data: posts } = await useAsyncData('recent-posts', () => 
+  queryCollection('content').order('date', 'DESC').limit(4).all()
 )
 
-
-
-
-
-// 3. Map the data to match your existing template structure
+// 2. Map the data to match your existing template structure
 const recentPosts = computed(() => {
-  return strapiResponse.value?.data?.map((post: any) => ({
-    // Use your specific field names (Title, Slug, etc.)
-    path: `/blog/${post.attributes.Slug}`,
-    title: post.attributes.Title,
-    // Handle the image URL from Strapi
-    image: post.attributes.Image?.data?.attributes?.url || 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
-    date: new Date(post.attributes.publishedAt).toLocaleDateString('en-US', {
+  return posts.value?.map((post: any) => ({
+    path: post._path || '/',
+    title: post.title || 'Untitled',
+    image: post.image || 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    date: post.date ? new Date(post.date).toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',
       year: 'numeric'
-    })
+    }) : 'Recently'
   })) || []
 })
 

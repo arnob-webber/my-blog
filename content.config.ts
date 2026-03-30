@@ -11,8 +11,8 @@ export default defineContentConfig({
         description: z.string(),
         image: z.string(),
         date: z.string(),
-        category: z.string(), // Single category like "Digital Art"
-        tags: z.array(z.string()) // List of tags like ["Blue", "Portrait"]
+        category: z.string().optional(),
+        tags: z.array(z.string()).optional()
       })
     })
   }

@@ -3,27 +3,8 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/strapi'
+    '@nuxtjs/tailwindcss'
   ],
-
-  strapi: {
-    url: process.env.STRAPI_URL || 'https://worthy-flower-f53009a381.strapiapp.com',
-    prefix: '/api',
-    version: 'v4',
-    cookie: {
-      path: '/',
-      maxAge: 14 * 24 * 60 * 60,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: true
-    }
-  },
-
-  runtimeConfig: {
-    public: {
-      strapiToken: process.env.STRAPI_TOKEN
-    }
-  },
 
   css: [
     '~/assets/css/fonts.css'
